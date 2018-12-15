@@ -2036,11 +2036,11 @@ $.ajax({ async : false,
                     for (var index = 0; index < obj.length; index++) {
                         var cityList = obj[index].市;
 
-                        for (var j = 0; j < cityList.length; j++)
+                        for (var j = 0; j < cityList.length; j++){
                             if (cityList[j].市名.trim() == str.trim()) {
                                 var code = cityList[j].编码;
                                 link = 'http://t.weather.sojson.com/api/weather/city/' + code;
-                              
+
                               xmlHttp=new XMLHttpRequest();
     xmlHttp.open("GET",link);
     xmlHttp.send(null);
@@ -2052,10 +2052,9 @@ $.ajax({ async : false,
             alert('查询城市天气失败，再次请求数据！');
         }
     }
-                              
                             }
+                        }
                     }
-
                 }
             });
         }
@@ -2068,6 +2067,5 @@ $.ajax({ async : false,
 </script>
   
   <body>
-
 </body>
 </html>
